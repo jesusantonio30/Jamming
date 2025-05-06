@@ -1,1 +1,49 @@
 @import "tailwindcss";
+
+body {
+    background-image: url('/src/assets/images/jamming_background.jpg');
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100dvh;
+}
+
+@theme {
+    /* Fonts */
+    --font-poppins: Poppins, sans-seriff;
+    --font-work-sans: Work Sans, sans-seriff;
+
+    /* Colors */
+        /* Jamming */
+        --color-jamming-600: #010c3f;
+        --color-jamming-500: rgba(1,12,63,.7);
+        --color-jamming-200: #6c41ec;
+        /* Borders */
+        --color-border-title: #6f6f6f;
+        --color-border-track: hsla(0, 0%, 100%, .8);
+}
+
+@layer base {
+    span {
+        color: #6c41ec;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        color: #fff;
+    }
+    h1 {
+        font-size: 1.88rem;
+    }
+}
+
+@layer components {
+    
+    .card {
+        @apply bg-jamming-500 shadow-md
+    }
+    .searchInput {
+        @apply border-solid border-white border rounded-sm text-lg text-center
+    }
+    .searchButton, .spotifyButton {
+        @apply text-sm rounded-[54px] border-0 font-medium
+    }
+}
