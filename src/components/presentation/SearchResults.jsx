@@ -1,6 +1,6 @@
 import React from 'react'
 
-const SearchResults = () => {
+const SearchResults = ({ searchResults }) => {
     
   return (
     <section className='searchResults'>
