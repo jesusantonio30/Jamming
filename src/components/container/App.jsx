@@ -8,18 +8,7 @@ const App = () => {
   // Keep track of user search input
   const [searchInput, setSearchInput] = useState('');
   // Keep track of search results
-  const [searchResults, setSearchResults] = useState([
-    {
-      name: "example track name 1",
-      artist: "example track artist 1",
-      album: "example track album 1"
-    },
-    {
-      name: "example track name 2",
-      artist: "example track artist 2",
-      album: "example track album 2"
-    }
-  ]);
+  const [searchResults, setSearchResults] = useState(null);
 
   // Function to handle user search input
   const handleSearchChange = (e) => {
@@ -27,15 +16,25 @@ const App = () => {
   };
   // Function to handle search
   const handleSearch = () => {
+    // Checking if searchInput is in mock data
     const artistMatch = MockSpotifyData.find(({ artist }) => (
       artist.name.toLowerCase() === searchInput.trim().toLowerCase()
     ));
-    setSearchResults((prevResults) => (
-      {
-        ...prevResults,
-      }
-    ))
-    console.log(searchResults);
+    // If it is, format the data and update searchResults
+    if (artistMatch) {
+      const songs = artistMatch.artist.songs.map(song => (
+        {
+          songName: song.name,
+          artist: artistMatch.artist.name,
+          album: song.album
+        }
+      ))
+      setSearchResults(songs);
+      console.log(songs)
+    } else {
+      console.log('Nothing');
+      setSearchResults(null)
+    }
   };
 
   return (
@@ -46,7 +45,9 @@ const App = () => {
           onSearchChange={handleSearchChange}
           onSearch={handleSearch}
         />
-        <SearchResults />
+        <SearchResults 
+          userSearchResults = {searchResults}
+        />
       </div>
     </main>
   )
