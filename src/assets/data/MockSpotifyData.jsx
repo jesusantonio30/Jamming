@@ -26,9 +26,9 @@ const MockSpotifyData = [
         name: "Tito Double P",
         id: "5X7UdnkYcFiDZGi3vmN7Ep",
         songs: [
-          { name: "Andamos Mejor", id: "4ty0dDF2n9eGHYp2FnXWJ9", album: "Del Barrio Hasta Aquí" },
-          { name: "Tumbando Humo", id: "7R2S9t2WGEbrZHQ5WR5TP7", album: "Los Corridos del Humo" },
-          { name: "Siempre Ready", id: "0M56cWJx9PZMWzEpPXvRla", album: "Código 02" }
+          { name: "TATTOO", id: "4ty0dDF2n9eGHYp2FnXWJ9", album: "TATTOO" },
+          { name: "EL LOKERON", id: "7R2S9t2WGEbrZHQ5WR5TP7", album: "INCÓMODO" },
+          { name: "ROSONES", id: "0M56cWJx9PZMWzEpPXvRla", album: "ROSONES" }
         ]
       }
     }
