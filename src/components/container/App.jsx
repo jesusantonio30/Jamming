@@ -8,7 +8,7 @@ const App = () => {
   // Keep track of user search input
   const [searchInput, setSearchInput] = useState('');
   // Keep track of search results
-  const [searchResults, setSearchResults] = useState(null);
+  const [searchResults, setSearchResults] = useState([]);
 
   // Function to handle user search input
   const handleSearchChange = (e) => {
@@ -26,7 +26,8 @@ const App = () => {
         {
           songName: song.name,
           artist: artistMatch.artist.name,
-          album: song.album
+          album: song.album,
+          id: artistMatch.artist.id
         }
       ))
       setSearchResults(songs);
@@ -38,7 +39,7 @@ const App = () => {
   };
 
   return (
-    <main className='h-screen flex flex-col items-center'>
+    <>
       <h1 className='header'>Ja<span>mmm</span>ing</h1>
       <div className="content-wrapper">
         <SearchBar
@@ -49,7 +50,7 @@ const App = () => {
           userSearchResults = {searchResults}
         />
       </div>
-    </main>
+    </>
   )
 }
 
