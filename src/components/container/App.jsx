@@ -34,7 +34,7 @@ const App = () => {
       console.log(songs)
     } else {
       console.log('Nothing');
-      setSearchResults(null)
+      setSearchResults([])
     }
   };
 
