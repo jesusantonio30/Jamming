@@ -41,7 +41,7 @@ body {
         @apply mt-28 flex flex-col items-center justify-center h-max
         w-2/3
     }
-    .search {
+    .searchContainer {
         @apply flex flex-col h-35 mb-28.5 justify-between items-center
         w-full
     }

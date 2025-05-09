@@ -16,7 +16,7 @@ const App = () => {
   };
 
   return (
-    <main className='h-screen flex flex-col items-center'>
+    <>
       <h1 className='header'>Ja<span>mmm</span>ing</h1>
       <div className="content-wrapper">
         <SearchBar
@@ -24,7 +24,7 @@ const App = () => {
           onSearch={handleSearch}
         />
       </div>
-    </main>
+    </>
   )
 }
 
