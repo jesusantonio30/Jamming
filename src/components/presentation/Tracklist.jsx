@@ -5,7 +5,7 @@ const Tracklist = ({ userSearch }) => {
   return (
     <ul>
         {userSearch.map((track) => (
-            <Track track={track} trackID={track.id}/>
+            <Track key={track.id} track={track}/>
         ))}
     </ul>
   )
