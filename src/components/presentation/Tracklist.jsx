@@ -1,10 +1,13 @@
 import React from 'react'
+import Track from './Track'
 
 const Tracklist = ({ userSearch }) => {
   return (
-    <div>
-      
-    </div>
+    <ul>
+        {userSearch.map((track) => (
+            <Track track={track} trackID={track.id}/>
+        ))}
+    </ul>
   )
 }
 

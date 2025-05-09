@@ -59,4 +59,14 @@ body {
         @apply p-3.25 font-arial w-32.5 bg-jamming-600 text-white
         hover:bg-jamming-200 active:bg-jamming-500 cursor-pointer
     }
+    .trackContainer{
+        @apply border-b-[1px] border-border-track bg-transparent flex
+        flex-col
+    }
+    .trackHeader{
+        @apply mb-1 text-lg font-medium font-work-sans
+    }
+    .trackArtistInfo {
+        @apply text-border-track
+    }
 }
