@@ -8,7 +8,7 @@ const App = () => {
   // Keep track of user search input
   const [searchInput, setSearchInput] = useState('');
   // Keep track of search results
-  const [searchResults, setSearchResults] = useState(null);
+  const [searchResults, setSearchResults] = useState([]);
 
   // Function to handle user search input
   const handleSearchChange = (e) => {
@@ -26,14 +26,15 @@ const App = () => {
         {
           songName: song.name,
           artist: artistMatch.artist.name,
-          album: song.album
+          album: song.album,
+          id: artistMatch.artist.id
         }
       ))
       setSearchResults(songs);
       console.log(songs)
     } else {
       console.log('Nothing');
-      setSearchResults(null)
+      setSearchResults([])
     }
   };
 
