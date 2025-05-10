@@ -9,8 +9,8 @@ body {
 
 @theme {
     /* Fonts */
-    --font-poppins: Poppins, sans-seriff;
-    --font-work-sans: Work Sans, sans-seriff;
+    --font-poppins: Poppins, sans-serif;
+    --font-work-sans: Work Sans, sans-serif;
     --font-arial: Arial, sans-seriff;
 
     /* Colors */
