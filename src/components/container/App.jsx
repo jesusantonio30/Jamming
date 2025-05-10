@@ -12,7 +12,10 @@ const App = () => {
 
   // Function to handle user search input
   const handleSearchChange = (e) => {
-    setSearchInput(e.target.value)
+    // Clears previous results on new search
+    setSearchResults([]);
+    // Updates search input
+    setSearchInput(e.target.value);
   };
   // Function to handle search
   const handleSearch = () => {
@@ -33,6 +36,7 @@ const App = () => {
       setSearchResults(songs);
       console.log(songs)
     } else {
+      // If it isn't, log 'Nothing' to console and clear searchResults
       console.log('Nothing');
       setSearchResults([])
     }
