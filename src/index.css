@@ -1,10 +1,18 @@
 @import "tailwindcss";
 
 body {
+    height: 100%;
+}
+
+main {
     background-image: url('/src/assets/images/jamming_background.jpg');
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: cover;
+    min-height: calc(100vh - 64px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @theme {
@@ -30,51 +38,86 @@ body {
     h1, h2, h3, h4, h5, h6 {
         color: #fff;
     }
+
+    input {
+        @apply focus:ring-0 focus:outline-none
+    }
 }
 
 @layer components {
+    /* HEADER */
     .header {
         @apply font-poppins bg-jamming-600 text-center p-3.5 w-screen
         text-3xl
     }
+
+    /* CONTENT WRAPPER */
     .content-wrapper {
-        @apply mt-28 flex flex-col items-center justify-center h-max
-        w-2/3 max-w-275
+        @apply flex flex-col items-center justify-center w-2/3 
+        max-w-275 gap-10 max-lg:mt-20 max-lg:mb-20
     }
+
+    /* MEDIA CONTENT SECTION */
+    .mediaContentSection {
+        @apply w-full min-lg:flex min-lg:justify-center min-lg:gap-10 
+        max-lg:flex max-lg:flex-col max-lg:gap-10
+    }
+
+    /* SEARCH STYLES*/
     .searchContainer {
-        @apply flex flex-col h-35 mb-28.5 justify-between items-center
+        @apply flex flex-col h-35 justify-between items-center
         w-full
     }
     .searchInput {
         @apply border-solid bg-white border rounded-2xl p-2 w-1/3
-        text-lg text-center
+        max-lg:w-full text-lg text-center
     }
-    .searchButton, .spotifyButton {
+    .searchButton, .spotifyButton, .saveSpotifyBtn {
         @apply text-sm rounded-[54px] border-0 font-medium
     }
     .searchButton {
         @apply p-3.25 font-arial w-32.5 bg-jamming-600 text-white
         hover:bg-jamming-200 active:bg-jamming-500 cursor-pointer
     }
-    .searchResults {
+
+    /* SEARCH RESULTS STYLES */
+    .searchResults, .playlistContainer {
         @apply max-lg:w-full min-lg:w-1/2 bg-jamming-500 shadow-lg
         p-4 max-h-130 overflow-scroll
     }
-    .searchResults::-webkit-scrollbar {
+    .searchResults::-webkit-scrollbar, .playlistContainer::-webkit-scrollbar {
         @apply hidden
       }
-    .searchResultsHeader {
+    .searchResultsHeader, .playlistInput {
         @apply sticky top-[-1rem] text-3xl bg-jamming-600 -mx-4 -mt-4
         mb-4 p-3 font-poppins
     }
-    .trackContainer{
-        @apply border-b-[1px] border-border-track bg-transparent flex
-        flex-col pt-2 pb-2 last:border-b-0
+
+    /* PLAYLIST STYLES */
+        .playlistInput {
+        @apply text-white w-[calc(100%+32px)]
     }
-    .trackHeader{
+    .saveSpotifyBtn {
+        @apply sticky bottom-0 p-3.25 font-arial w-1/3 bg-jamming-200
+        text-white hover:bg-jamming-600 active:bg-jamming-500 
+        cursor-pointer left-1/2 -translate-x-1/2
+    }
+
+    /* TRACK STYLES */
+    .trackContainer {
+        @apply border-b-[1px] border-border-track last:border-b-0 flex 
+        justify-between pr-2
+    }
+    .track {
+        @apply bg-transparent flex flex-col pt-2 pb-2
+    }
+    .trackHeader {
         @apply mb-1 text-lg font-medium font-work-sans
     }
     .trackArtistInfo {
         @apply text-border-track
+    }
+    .addRemoveBtn {
+        @apply text-white text-xl cursor-pointer
     }
 }
