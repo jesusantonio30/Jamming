@@ -57,6 +57,13 @@ main {
         max-w-275 gap-10 max-lg:mt-20 max-lg:mb-20
     }
 
+    /* LOGIN SPOTIFY */
+    .loginSpotifyBtn {
+        @apply w-1/2 bg-green-500 rounded-4xl font-poppins font-medium 
+        text-xl p-3 cursor-pointer shadow-xl
+        hover:bg-green-400 active:scale-105 active:border-white active:border-4
+    }
+
     /* MEDIA CONTENT SECTION */
     .mediaContentSection {
         @apply w-full min-lg:flex min-lg:justify-center min-lg:gap-10 
