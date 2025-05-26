@@ -17,7 +17,7 @@ const App = () => {
     // playlistTitle: Stores the title of the custom playlist, defaulting to 'Playlist'
     const [playlistTitle, setPlaylistTitle] = useState('Playlist');
     // isAuthenticated: Tracks whether the user is logged into Spotify (true/false)
-    const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const [isAuthenticated, setIsAuthenticated] = useState(!!localStorage.getItem('refresh_token'));
 
     // Handle Spotify authentication callback when the component mounts
     useEffect(() => {

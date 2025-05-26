@@ -39,12 +39,10 @@
         const codeVerifier = generateRandomString(64);
         // Save the code verifier in localStorage so it can be used later when requesting a token
         window.localStorage.setItem('code_verifier', codeVerifier);
-        console.log('Generated code verifier:', codeVerifier); // Debug log to check the value
 
         // Hash the code verifier and encode it to create the code challenge
         const hashed = await sha256(codeVerifier);
         const codeChallenge = base64encode(hashed);
-        console.log('Generated code challenge:', codeChallenge); // Debug log to check the value
 
         // Define constants needed for Spotify API authentication
         const clientId = clientID; // Unique ID for this app
@@ -115,13 +113,11 @@
 
             // Check if the request failed and throw an error if it did
             if (!response.ok) {
-                console.error('Token request error:', data); // Debug log for errors
                 throw new Error(
                     `Token request failed: ${data.error_description || response.statusText}`
                 );
             }
 
-            console.log('Token response:', data); // Debug log to see the response
             // If we got an access token, save it and clean up
             if (data.access_token) {
                 localStorage.setItem('access_token', data.access_token); // Store the access token
