@@ -1,5 +1,5 @@
+    const clientID = import.meta.env.VITE_CLIENT_ID;
 // PKCE
-
     // Generate a random string for the code verifier
     const generateRandomString = (length) => {
         // Define the characters that can be used in the random string
@@ -47,8 +47,8 @@
         console.log('Generated code challenge:', codeChallenge); // Debug log to check the value
 
         // Define constants needed for Spotify API authentication
-        const clientId = 'b49071fbec96443abac8799665cc7bd6'; // Unique ID for this app
-        const redirectUri = 'http://127.0.0.1:5174/callback'; // Where Spotify redirects after login
+        const clientId = clientID; // Unique ID for this app
+        const redirectUri = 'http://127.0.0.1:5173/callback'; // Where Spotify redirects after login
         // List of permissions (scopes) the app needs from the user
         const scopes = [
             'user-read-private',        // Access to user's private profile info
@@ -86,11 +86,10 @@
         if (!codeVerifier) {
             throw new Error('No code verifier found in localStorage');
         }
-        console.log('Using code verifier:', codeVerifier); // Debug log to check the value
 
         // Define constants for Spotify API authentication
-        const clientId = 'b49071fbec96443abac8799665cc7bd6'; // Unique ID for this app
-        const redirectUri = 'http://127.0.0.1:5174/callback'; // Must match the redirect URI used earlier
+        const clientId = clientID; // Unique ID for this app
+        const redirectUri = 'http://127.0.0.1:5173/callback'; // Must match the redirect URI used earlier
 
         // Define the URL where we'll request the token
         const url = "https://accounts.spotify.com/api/token";
@@ -158,7 +157,7 @@
             body: new URLSearchParams({
                 grant_type: 'refresh_token',     // Type of request (refreshing a token)
                 refresh_token: refreshToken,     // The refresh token we stored
-                client_id: 'b49071fbec96443abac8799665cc7bd6', // Identify our app
+                client_id: clientID, // Identify our app
             }),
         };
 
