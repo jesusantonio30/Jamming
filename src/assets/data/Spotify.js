@@ -1,6 +1,5 @@
     const clientID = import.meta.env.VITE_CLIENT_ID;
     const REDIRECT_URI = import.meta.env.VITE_REDIRECT_URI;
-    console.log('REDIRECT_URI:', REDIRECT_URI)
 // PKCE
     // Generate a random string for the code verifier
     const generateRandomString = (length) => {
@@ -37,6 +36,7 @@
 
     // Generate the authorization URL and redirect the user to Spotify's login page
     export const generateAuthUrl = async () => {
+        console.log('REDIRECT_URI:', REDIRECT_URI) // Debug
         // Generate a random code verifier (a secret string) with a length of 64 characters
         const codeVerifier = generateRandomString(64);
         // Save the code verifier in localStorage so it can be used later when requesting a token
