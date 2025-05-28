@@ -46,7 +46,7 @@
 
         // Define constants needed for Spotify API authentication
         const clientId = clientID; // Unique ID for this app
-        const redirectUri = 'http://127.0.0.1:5173/callback'; // Where Spotify redirects after login
+        const redirectUri = 'https://jammming-jesus.netlify.app/callback'; // Where Spotify redirects after login
         // List of permissions (scopes) the app needs from the user
         const scopes = [
             'user-read-private',        // Access to user's private profile info
@@ -87,7 +87,7 @@
 
         // Define constants for Spotify API authentication
         const clientId = clientID; // Unique ID for this app
-        const redirectUri = 'http://127.0.0.1:5173/callback'; // Must match the redirect URI used earlier
+        const redirectUri = 'https://jammming-jesus.netlify.app/callback'; // Must match the redirect URI used earlier
 
         // Define the URL where we'll request the token
         const url = "https://accounts.spotify.com/api/token";
