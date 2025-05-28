@@ -1,5 +1,5 @@
     const clientID = import.meta.env.VITE_CLIENT_ID;
-    const redirectUri = import.meta.env.REDIRECT_URI;
+    const REDIRECT_URI = import.meta.env.REDIRECT_URI;
 // PKCE
     // Generate a random string for the code verifier
     const generateRandomString = (length) => {
@@ -47,7 +47,7 @@
 
         // Define constants needed for Spotify API authentication
         const clientId = clientID; // Unique ID for this app
-        const redirectUri = redirectUri; // Where Spotify redirects after login
+        const redirectUri = REDIRECT_URI; // Where Spotify redirects after login
         // List of permissions (scopes) the app needs from the user
         const scopes = [
             'user-read-private',        // Access to user's private profile info
@@ -88,7 +88,7 @@
 
         // Define constants for Spotify API authentication
         const clientId = clientID; // Unique ID for this app
-        const redirectUri = redirectUri; // Must match the redirect URI used earlier
+        const redirectUri = REDIRECT_URI; // Must match the redirect URI used earlier
 
         // Define the URL where we'll request the token
         const url = "https://accounts.spotify.com/api/token";
