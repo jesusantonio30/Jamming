@@ -1,5 +1,6 @@
     const clientID = import.meta.env.VITE_CLIENT_ID;
-    const REDIRECT_URI = import.meta.env.REDIRECT_URI;
+    const REDIRECT_URI = import.meta.env.VITE_REDIRECT_URI;
+    console.log('REDIRECT_URI:', REDIRECT_URI)
 // PKCE
     // Generate a random string for the code verifier
     const generateRandomString = (length) => {
